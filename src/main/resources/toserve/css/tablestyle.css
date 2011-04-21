@@ -1,0 +1,33 @@
+tbody { background:  #F8F8FF; }
+
+#table-box { border-collapse: collapse; }
+
+#table-box th, td { padding: .3em;
+                    border: 1px #ccc solid; }
+
+#table-box tbody tr:hover { background: #fff; }
+
+#table-plane { border: hidden; }
+
+#table-wish { border-collapse: collapse; }
+
+#table-wish th, td { padding: .3em;
+                     border: 1px #ccc solid; }
+
+#table-check tbody { background: transparent; }
+
+#table-check tr th { border: hidden; }
+
+#table-check tr:hover { background: #fff; }
+
+#wish { background: #90EE90; }
+
+#available { background: #FFEC8B; }
+
+#plane { background: #ccc; }
+
+#table-select { border-collapse: collapse; }
+
+#table-select th, td { border: 1px #ccc solid; }
+
+#table-select tbody th:hover { background: #fff; }

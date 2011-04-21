@@ -1,0 +1,40 @@
+# LDAP Props                     #
+# Need ldap1 for email adresses  #
+# Need zefi for Authentication   #
+
+ldap.server.ldap1=ldaps://ldap1.fh-schmalkalden.de:636
+ldap.server.zefi=ldaps://zefi.fh-schmalkalden.de:636
+
+# The location of the sslstore file! VERY IMPORTANT!
+ldap.server.truststore=/home/chris/Studium/6.\ Semester/Bachelor_Arbeit/ba_repo/sslstore
+
+# I think we dont even use this yet
+ldap.server.base_dn=ou=people,ou=in,dc=fh-schmalkalden,dc=de
+
+# Declaring admins
+spirit.server.admins=denison;braun3;schmid11
+
+# Default email adresse, if servers dont have any for a user!
+spirit.default.email=spirit@informatik.fh-schmalkalden.de
+
+# Wether we want to use LDAP Auth or not
+ldap.server.auth.use=false
+
+# section where we define default values if we wont use ldap auth
+default.email=spirit@informatik.fh-schmalkalden.de
+default.gidNumber=1001
+default.cn=testUser
+default.displayName=Mr. Test User
+
+#-----------------------------#
+# Spirit Curriculum/Timetable #
+#-----------------------------#
+
+# Declaring course-shedulers
+spirit.course.user=neuhardt
+
+# Declaring timetable-shedulers
+spirit.timetable.user=recknagel
+
+# Declaring used persistence
+spirit.pers.layer=mongoDB

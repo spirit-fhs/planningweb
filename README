@@ -1,0 +1,51 @@
+PlanningWeb is another application for the Spirit project from the Faculty of
+Computer Science of the University of Applied Sciences Schmalkalden.
+
+http://pads.fh-schmalkalden.de/spirit.html
+
+It will act as the frontend for planning the curriculum.
+
+It is/will be developed with Scala 2.8.1 and Lift 2.3.
+
+http://www.scala-lang.org
+http://www.liftweb.net
+
+Features:
+* Usage of CSS Selectors in Lift.
+
+* Working against MongoDB and other Databases (only MongoDB is implemented yet), switchable via TAG in the prop files.
+
+Hints:
+* The fhsldap_2.8.1-1.0.jar which is located in the lib/ folder
+  is the module found at https://github.com/mdenison/FhS-LDAP-Module.
+  Of course it is possible to use the module as described in its README.
+
+* Working SBT 0.7.4 installation is needed http://code.google.com/p/simple-build-tool/.
+
+* Not fully functional yet....
+
+
+Getting Started:
+
+Clone this repository.
+run:
+$ sbt update compile
+
+If this works without any errors go on with editing the Prop file as needed.
+
+Using PlanningWeb with MongoDB simply set
+spirit.pers.layer=mongoDB
+in the default.props file.
+
+Running
+$ sbt test
+should pass all tests with MongoDB as Databases.
+
+After everything is set up, run:
+$ sbt ~jetty-run
+should give a Welcome screen at http://localhost:8081
+
+Log In with the User "admin".
+
+Now you can add dozents, courses, lectures and so on ...
+
