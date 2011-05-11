@@ -13,7 +13,7 @@ import lecturemanagement.impl._
 import coursemanagement.impl._
 import dozentmanagement.impl._
 import transform._
-import snippet.PlanningLectureCreater
+import snippet.lectures.snippet.PlanningLectureCreater
 
 object LectureManagementSpecs extends Specification("LectureManagement Specification") {
 

@@ -15,5 +15,6 @@ import planningweb.dozentmanagement.impl.Dozent
 import planningweb.roommanagement.impl.Room
 
 case class Worktime(dozent: Dozent,
-                    timeSlots: List[TimeSlot],
-                    rooms: List[Room])
+                    timeSlots: List[TimeSlot] /*,
+                    rooms: List[Room]*/,
+                    notes: String)

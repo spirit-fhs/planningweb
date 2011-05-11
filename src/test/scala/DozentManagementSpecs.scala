@@ -11,7 +11,6 @@ import persistence._
 import net.liftweb.mongodb._
 import dozentmanagement.impl._
 import worktimemanagement.impl._
-import roommanagement.impl._
 import transform._
 
 object DozentManagementSpecs extends Specification("DozentManagement Specification") {
@@ -33,9 +32,8 @@ object DozentManagementSpecs extends Specification("DozentManagement Specificati
   val dozentUpdate = new Dozent("TestDozentUpdate", "self-management-update", 1.1, dozentTypeUpdate)
   val fhsdozent = FHSDozent("fhsId",dozent)
   val fhsdozentUpdate = FHSDozent("fhsIdUpdate",dozentUpdate)
-  val room = Room("H","202",50,List("Beamer"))
   val timeSlot = TimeSlot("Mo",1,false,false)
-  val worktime = Worktime(fhsdozent.dozent,List(timeSlot),List(room))
+  val worktime = Worktime(fhsdozent.dozent,List(timeSlot),"")
 
   "DozentType" should {
     "when add a dozent-type" >> {

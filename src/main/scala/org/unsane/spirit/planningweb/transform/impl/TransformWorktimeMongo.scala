@@ -14,7 +14,7 @@ import org.unsane.spirit.planningweb._
 import transform.{ITransform, TransformFactory}
 import model.WorktimeMongo
 import dozentmanagement.impl.{Dozent, DozentType}
-import roommanagement.impl.Room
+//import roommanagement.impl.Room
 import worktimemanagement.impl.{Worktime,TimeSlot}
 import net.liftweb.json.JsonDSL._
 
@@ -29,7 +29,7 @@ class TransformWorktimeMongo extends ITransform {
     val worktime = obj.asInstanceOf[Worktime]
     WorktimeMongo.createRecord.dozent(worktime.dozent)
                               .timeSlots(worktime.timeSlots)
-                              .rooms(worktime.rooms).save
+                              .notes(worktime.notes).save
   }
 
   /**
@@ -45,7 +45,7 @@ class TransformWorktimeMongo extends ITransform {
     else {
       fromDB map (worktime => Worktime(worktime.dozent.value,
                                    worktime.timeSlots.value,
-                                   worktime.rooms.value))
+                                   worktime.notes.value))
     }
   }
 
@@ -92,6 +92,6 @@ class TransformWorktimeMongo extends ITransform {
 
     toChange map( _ => WorktimeMongo.createRecord.dozent(objAfter.dozent)
                                                  .timeSlots(objAfter.timeSlots)
-                                                 .rooms(objAfter.rooms).save)
+                                                 .notes(objAfter.notes).save)
   }
 }

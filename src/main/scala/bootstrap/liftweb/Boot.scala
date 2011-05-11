@@ -126,9 +126,15 @@ class Boot {
                          )
 
 
+    // Registring the snippet packages.
+    LiftRules.addToPackages("org.unsane.spirit.planningweb")
+    LiftRules.addToPackages("org.unsane.spirit.planningweb.snippet.dozents")
+    LiftRules.addToPackages("org.unsane.spirit.planningweb.snippet.courses")
+    LiftRules.addToPackages("org.unsane.spirit.planningweb.snippet.rooms")
+    LiftRules.addToPackages("org.unsane.spirit.planningweb.snippet.worktimes")
+    LiftRules.addToPackages("org.unsane.spirit.planningweb.snippet.lectures")
 
-
-    // / set the sitemap.  Note if you don't want access control for
+    // set the sitemap.  Note if you don't want access control for
     // each page, just comment this line out
    LiftRules.setSiteMap(sitemap)
 

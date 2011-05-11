@@ -10,7 +10,6 @@ import persistence._
 import net.liftweb.mongodb._
 import worktimemanagement.impl._
 import dozentmanagement.impl._
-import roommanagement.impl._
 import transform._
 
 object WorktimeManagementSpecs extends Specification("WorktimeManagement Specification") {
@@ -33,12 +32,10 @@ object WorktimeManagementSpecs extends Specification("WorktimeManagement Specifi
   val dozent = Dozent("TestDozent", "self-management", 2.5, dozentType)
   val dozentUpdate = new Dozent("TestDozentUpdate", "self-management-update", 1.1, dozentTypeUpdate)
 
-  val room = Room("H","202",50,List("Beamer"))
-
   val timeSlot = TimeSlot("Mo",1,false,false)
 
-  val worktime = Worktime(dozent,List(timeSlot),List(room))
-  val worktimeUpdate = Worktime(dozentUpdate,List(),List())
+  val worktime = Worktime(dozent,List(timeSlot),"")
+  val worktimeUpdate = Worktime(dozentUpdate,List(),"")
 
   "WorktimeManager" should {
     "when add a worktimemanager" >> {
