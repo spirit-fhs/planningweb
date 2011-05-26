@@ -37,7 +37,7 @@ class TransformCourseMongo extends ITransform {
    *
    * @return a list of objects of type Course
    */
-  def load : List[Course] = {
+  def load: List[Course] = {
     val fromDB = CourseMongo.findAll
     if (fromDB.isEmpty) {
       List()

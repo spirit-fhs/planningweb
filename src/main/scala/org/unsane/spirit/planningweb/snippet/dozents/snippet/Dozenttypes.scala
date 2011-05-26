@@ -21,23 +21,24 @@ import planningweb.dozentmanagement.impl.DozentType
 import planningweb.persistence._
 import planningweb.transform._
 
-
 class Dozenttypes {
-  val peristence:IPersistence = PersistenceFactory
-                                    .createPersistence(TransformFactory
-                                    .createTransformDozentType(Props.get("spirit.pers.layer") openOr ""))
+
+  val persistence:IPersistence = PersistenceFactory
+                                  .createPersistence(TransformFactory
+                                  .createTransformDozentType(Props.get("spirit.pers.layer") openOr ""))
   var hasLectureship = false
   var name = ""
   var requiredTime = "0"
 
   // to add a new DozentType to persistence
   def add () {
-    val dozentTypes = peristence.read.asInstanceOf[List[DozentType]]
+    val dozentTypes = persistence.read.asInstanceOf[List[DozentType]]
+
     val alreadyAvailable = dozentTypes filter {typeD => typeD.name == name}
 
     if (name != "" && alreadyAvailable.isEmpty) {
       try {
-        peristence.create(DozentType(name,requiredTime.toInt, hasLectureship))
+        persistence.create(DozentType(name,requiredTime.toInt, hasLectureship))
       } catch {
           case e: Exception => S.notice(requiredTime + " is not a Number!")
         }
@@ -50,11 +51,11 @@ class Dozenttypes {
   def delete () = {
     import scala.collection.mutable.Set
     val toDelete = Set[DozentType]()
-    val dozentTypes = peristence.read.asInstanceOf[List[DozentType]]
+    val dozentTypes = persistence.read.asInstanceOf[List[DozentType]]
 
     def deleteDozentTypes(toDelete: Set[DozentType]) = {
       toDelete foreach {
-        typeD => peristence.delete(typeD)
+        typeD => persistence.delete(typeD)
       }
     }
 

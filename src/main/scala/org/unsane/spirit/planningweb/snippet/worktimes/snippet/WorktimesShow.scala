@@ -20,6 +20,7 @@ import js._
 import JsCmds._
 import JE._
 import net.liftweb.util.Props
+import net.liftweb.textile.TextileParser
 import org.unsane.spirit.planningweb
 import planningweb.worktimemanagement.impl._
 import planningweb.dozentmanagement.impl._
@@ -51,8 +52,8 @@ class WorktimesShow {
                  }
 
     val notes = if(toShow.isEmpty) {
-                  Text("")
-                } else {Text(toShow.head.notes)}
+                  TextileParser.toHtml("%{color:red}Keine Kommentare vorhanden!%")
+                } else {TextileParser.toHtml(toShow.head.notes)}
 
     val lectureship = if(toShow.isEmpty) {
                         Text("")

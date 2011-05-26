@@ -74,7 +74,26 @@ class Wishtimes extends WishtimesHelper with WishtimesTimetable {
 
         val saveButton = SHtml.submit("Speichern", save)
 
-        timetable ++ <h2>{"Wunschräume/Kommentare"}</h2> ++ notes ++ <br /> ++ saveButton
+        val wishtimeMenue = timetable ++ <h2>{"Wunschräume/Kommentare"}</h2> ++
+          <table>
+            <tr>
+              <th>{notes}</th>
+              <th>
+                <strong>Formatierung:</strong>
+                <br />**bold text**
+                <br />__italic text__
+                <br />*_ bold italic text _*
+                <br />{"%{color:red}Text in red %"}
+                <br /><strong>Aufz&auml;hlung:</strong>
+                <br />* bulleted list
+                <br />
+                <br />* bulleted list
+                <br />** 2-level
+              </th>
+            </tr>
+          </table> ++ saveButton
+
+        wishtimeMenue
       } else {
           Text("Sie sind im System nicht mit FHS-ID registriert. Bitte wenden sie sich an den Lehrplaner!")
         }

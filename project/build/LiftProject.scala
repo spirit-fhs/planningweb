@@ -14,6 +14,7 @@ class LiftProject(info: ProjectInfo) extends DefaultWebProject(info) {
     "net.liftweb" %% "lift-webkit" % liftVersion % "compile->default" withSources(),
     "net.liftweb" %% "lift-mapper" % liftVersion % "compile->default" withSources(),
     "net.liftweb" %% "lift-mongodb" % liftVersion % "compile->default" withSources(),
+    "net.liftweb" %% "lift-textile" % liftVersion % "compile->default" withSources(),
     "net.liftweb" %% "lift-mongodb-record" % liftVersion % "compile->default" withSources(),
     "net.liftweb" %% "lift-wizard" % liftVersion % "compile->default" withSources(),
     "org.mortbay.jetty" % "jetty" % "6.1.22" % "test->default",
