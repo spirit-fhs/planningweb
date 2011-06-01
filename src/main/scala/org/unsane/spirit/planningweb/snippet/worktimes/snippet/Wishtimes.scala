@@ -22,14 +22,22 @@ import planningweb.worktimemanagement.impl._
 
 
 class Wishtimes extends WishtimesHelper with WishtimesTimetable {
-  val worktimeFactor = 1.125
+  val worktimeFactor = 1.25
 
   def select() = {
     if(status) {
       if(!isFHSDozent.isEmpty) {
+        val dozent = isFHSDozent.head.dozent
+
+        def calculateWorktime = {
+          val times = ((dozent.typeD.requiredTime - dozent.timeSelfManagement) * worktimeFactor) / 2
+          val slots = if(times.intValue < times) {times.intValue + 1}
+                      else {if(times.intValue == times) {times.intValue} else {times.intValue}}
+          slots
+        }
+        S.notice("NOTE: Please select " + calculateWorktime + " times!")
 
         def save() = {
-          val dozent = isFHSDozent.head.dozent
           val timeSlotsToSave = List(oneMo,oneTu,oneWe,oneTh,oneFr,
                                      twoMo,twoTu,twoWe,twoTh,twoFr,
                                      threeMo,threeTu,threeWe,threeTh,threeFr,
@@ -38,8 +46,7 @@ class Wishtimes extends WishtimesHelper with WishtimesTimetable {
                                      sixMo,sixTu,sixWe,sixTh,sixFr)
 
           def calculateMinSelectedTimes() = {
-            lazy val minWorkTime = (dozent.typeD.requiredTime - dozent.timeSelfManagement) * worktimeFactor
-            S.notice("Min: " + minWorkTime.toString)
+            lazy val minWorkTime = calculateWorktime
             val selectedWorktime = timeSlotsToSave.filter(s => s.isWishtime == true || s.isAvailableTime == true).size
             S.notice("Selected: " + selectedWorktime.toString)
             if(selectedWorktime < minWorkTime) {

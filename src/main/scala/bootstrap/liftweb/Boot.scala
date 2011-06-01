@@ -38,9 +38,6 @@ class Boot {
           "spirit_curriculum")
       case _ => error("Could not support: " + usedPersistence) // noch mal schauen!!!
     }
-    // where to search snippet
-    LiftRules.addToPackages("org.unsane.spirit.planningweb")
-
 
      // we need this for ressources
      ResourceServer.allow {
