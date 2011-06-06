@@ -62,10 +62,10 @@ trait WishtimesHelper {
   }
 
   val currentUserId = User.currentUserId.openOr("not available")
-  val isFHSDozent = fhsdozents.filter(_.fhsId == currentUserId)
+  var isFHSDozent = fhsdozents.filter(_.fhsId == currentUserId)
 
   // to set the worktime of a dozent
-  val worktimeOfDozent = isFHSDozent match {
+  var worktimeOfDozent = isFHSDozent match {
     case List() => List()
     case _ =>  worktimes.filter(_.dozent.name == isFHSDozent.head.dozent.name)
   }

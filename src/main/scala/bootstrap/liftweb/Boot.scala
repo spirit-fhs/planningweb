@@ -36,7 +36,7 @@ class Boot {
           MongoAddress(MongoHost("127.0.0.1", 27017), "spirit_curriculum"),
           "spirit_curriculum",
           "spirit_curriculum")
-      case _ => error("Could not support: " + usedPersistence) // noch mal schauen!!!
+      case _ => error("Could not support: " + usedPersistence)
     }
 
      // we need this for ressources
@@ -118,7 +118,8 @@ class Boot {
                            // the menue for worktimemanagement
                            Menu.i("Arbeitszeitmanagement") / "worktime" / "management" >> ifTimetableSheduler submenus(
                              Menu.i("Einstellungen") / "worktime" / "setting" >> LocGroup("top_worktime"),
-                             Menu.i("Arbeitszeiten") / "worktime" / "show" >> LocGroup("top_worktime")
+                             Menu.i("Arbeitszeiten anzeigen") / "worktime" / "show" >> LocGroup("top_worktime"),
+                             Menu.i("Arbeitszeiten bearbeiten") / "worktime" / "edit" >> LocGroup("top_worktime")
                            )
                          )
 
