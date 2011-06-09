@@ -30,7 +30,8 @@ class Wishtimes extends WishtimesHelper with WishtimesTimetable {
         val dozent = isFHSDozent.head.dozent
 
         def calculateWorktime = {
-          val times = ((dozent.typeD.requiredTime - dozent.timeSelfManagement) * worktimeFactor) / 2
+          val times = ((dozent.typeD.requiredTime - dozent.timeSelfManagement) *
+                         (if(dozent.typeD.hasLectureship) 1 else worktimeFactor)) / 2
           val slots = if(times.intValue < times) {times.intValue + 1}
                       else {if(times.intValue == times) {times.intValue} else {times.intValue}}
           slots
