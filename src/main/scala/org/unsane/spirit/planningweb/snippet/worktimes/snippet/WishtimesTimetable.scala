@@ -20,6 +20,9 @@ import planningweb.worktimemanagement.impl._
 
 trait WishtimesTimetable extends WishtimesHelper {
 
+  val wishTimeColor = "wish"
+  val availableTimeColor = "available"
+
   def setSlot(times:List[Worktime], day: String, time: Int) : TimeSlot= {
     if(times.isEmpty) {
       initialTimeSlots.filter(s => s.day == day && s.time == time).head
@@ -196,7 +199,7 @@ trait WishtimesTimetable extends WishtimesHelper {
   }
 
   lazy val timetable =
-          <table id="table-select">
+          <table onclick="changeColor()" id="table-select">
             <thead>
              <th></th>
              <th>{"Montag"}</th><th>{"Dienstag"}</th><th>{"Mittwoch"}</th><th>{"Donnerstag"}</th><th>{"Freitag"}</th>
@@ -251,8 +254,8 @@ trait WishtimesTimetable extends WishtimesHelper {
             </tr>
             <tfoot>
               <th>{"Legende"}</th>
-              <th>{"W: Wunsch-Zeit"}</th>
-              <th>{"K: Kann-Zeit"}</th>
+              <th id={wishTimeColor}>{"W: Wunsch-Zeit"}</th>
+              <th id={availableTimeColor}>{"K: Kann-Zeit"}</th>
               <th>{"N: N/A-Zeit"}</th>
               <th></th>
               <th></th>
