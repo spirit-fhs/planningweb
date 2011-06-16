@@ -42,6 +42,7 @@ class Boot {
      // we need this for ressources
      ResourceServer.allow {
       case "css" :: _ => true
+      case "javaScript" :: _ => true
      }
 
     // to check if the current User is registered in Configfile

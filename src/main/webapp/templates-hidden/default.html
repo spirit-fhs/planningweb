@@ -8,6 +8,7 @@
     <style class="lift:CSS.fancyType"></style>
     <script id="jquery" src="/classpath/jquery.js" type="text/javascript"></script>
     <script id="json" src="/classpath/json.js" type="text/javascript"></script>
+    <script src="/classpath/javaScript/changeColor.js" type="text/javascript"></script>
     <link href="/classpath/css/loginstyle.css" type="text/css" rel="stylesheet" media="screen, projection" />
     <style type="text/css">
 /* <![CDATA[ */
@@ -91,17 +92,6 @@ text-align: center;
 
   /* ]]> */
   </style>
-  <script language="JavaScript" type="text/javascript">
-    function changeColor(){
-      for(i = 0; i<document.getElementsByTagName("input").length;i++){
-        if(document.getElementsByTagName("input")[i].checked == true) {
-          if(document.getElementsByTagName("input")[i].value == "W") document.getElementsByTagName("input")[i].parentNode.parentNode.style.backgroundColor = "#90EE90";
-          if(document.getElementsByTagName("input")[i].value == "K") document.getElementsByTagName("input")[i].parentNode.parentNode.style.backgroundColor = "#FFEC8B";
-          if(document.getElementsByTagName("input")[i].value == "N") document.getElementsByTagName("input")[i].parentNode.parentNode.style.backgroundColor = "#F8F8FF";
-        }
-      }
-    }
-  </script>
   </head>
   <body onload="changeColor()">
     <div class="container">
