@@ -1,7 +1,7 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
 /**
- * This class is the vie to update a lecture
+ * This class is the view to update a lecture
  *
  * $cs
  * @version 1.0
@@ -28,12 +28,7 @@ import planningweb.coursemanagement.impl.Course
 import planningweb.dozentmanagement.impl.Dozent
 
 
-class LecturesUpdate extends LecturesCreateHelper with LecturesCreateName
-                                                  with LecturesCreateCourses
-                                                  with LecturesCreateSemesters
-                                                  with LecturesCreateDozents
-                                                  with LecturesCreateHoures
-                                                  with LecturesCreateSave {
+class LecturesUpdate extends LecturesCreateNavigator {
 
   val peristence:IPersistence = PersistenceFactory
                                   .createPersistence(TransformFactory
@@ -104,14 +99,7 @@ class LecturesUpdate extends LecturesCreateHelper with LecturesCreateName
                       </table>
 
     if (Name.is._1 != "") {
-      Status.is match {
-        case LecturesCreateHelper.InitialStatus => addName
-        case LecturesCreateHelper.AddedName => addCourses
-        case LecturesCreateHelper.AddedCourse => addSemesters
-        case LecturesCreateHelper.AddedSemester => addDozents
-        case LecturesCreateHelper.AddedDozent => addHoures
-        case LecturesCreateHelper.AddedHoure => saveLecture
-      }
+      navigation
     }
     else {
       updateMenue

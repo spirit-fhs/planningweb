@@ -6,7 +6,7 @@ ldap.server.ldap1=ldaps://ldap1.fh-schmalkalden.de:636
 ldap.server.zefi=ldaps://zefi.fh-schmalkalden.de:636
 
 # The location of the sslstore file! VERY IMPORTANT!
-ldap.server.truststore=/home/chris/sslstore
+ldap.server.truststore=/home/chris/Studium/6.\ Semester/Bachelor_Arbeit/ba_repo/sslstore
 
 # I think we dont even use this yet
 ldap.server.base_dn=ou=people,ou=in,dc=fh-schmalkalden,dc=de

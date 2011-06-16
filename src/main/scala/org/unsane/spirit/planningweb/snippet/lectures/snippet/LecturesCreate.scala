@@ -25,12 +25,7 @@ import planningweb.coursemanagement.impl.Course
 import planningweb.dozentmanagement.impl.Dozent
 
 
-class LecturesCreate extends LecturesCreateHelper with LecturesCreateName
-                                                  with LecturesCreateCourses
-                                                  with LecturesCreateSemesters
-                                                  with LecturesCreateDozents
-                                                  with LecturesCreateHoures
-                                                  with LecturesCreateSave {
+class LecturesCreate extends LecturesCreateNavigator {
  /**
   * we have to call this function, because we need a differentiation between
   * a update process and a normal create process
@@ -41,14 +36,7 @@ class LecturesCreate extends LecturesCreateHelper with LecturesCreateName
   * this function represents the different screens to create a lecture
   */
   def create() = {
-    Status.is match {
-      case LecturesCreateHelper.InitialStatus => addName
-      case LecturesCreateHelper.AddedName => addCourses
-      case LecturesCreateHelper.AddedCourse => addSemesters
-      case LecturesCreateHelper.AddedSemester => addDozents
-      case LecturesCreateHelper.AddedDozent => addHoures
-      case LecturesCreateHelper.AddedHoure => saveLecture
-    }
+    navigation
   }
 
   def render = {
