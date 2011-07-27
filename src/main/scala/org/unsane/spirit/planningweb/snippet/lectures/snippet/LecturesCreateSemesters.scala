@@ -39,7 +39,7 @@ trait LecturesCreateSemesters extends LecturesCreateHelper {
     }
 
     def back() = {
-      //Status(LecturesCreateHelper.AddedName)
+      Status(LecturesCreateHelper.AddedName)
       S.redirectTo(thisSide)
     }
 
