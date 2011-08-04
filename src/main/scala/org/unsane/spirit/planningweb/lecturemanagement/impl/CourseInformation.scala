@@ -1,17 +1,14 @@
 package org.unsane.spirit.planningweb.lecturemanagement.impl
 
+import org.unsane.spirit.planningweb
+import planningweb.coursemanagement.impl.Course
+
 /**
  * This class is the representation of a courseinformation object
  *
- * $cs
  * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
+ * @author Christoph Schmidt
  */
-
-import org.unsane.spirit.planningweb
-import planningweb.coursemanagement.impl.Course
 
 case class CourseInformation (course: Course,
                               semesterInfos: List[SemesterInformation])

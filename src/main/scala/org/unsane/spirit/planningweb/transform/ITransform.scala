@@ -3,13 +3,9 @@ package org.unsane.spirit.planningweb.transform
 /**
  * This interface decouple the Oject-World form the DB-World
  *
- * $cs
  * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
+ * @author Christoph Schmidt
  */
-
 
 trait ITransform {
 

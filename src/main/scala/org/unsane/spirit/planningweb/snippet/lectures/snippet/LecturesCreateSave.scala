@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This trait is the view to save a lecture in persistence
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -20,10 +10,15 @@ import planningweb.transform._
 import planningweb.persistence._
 import planningweb.lecturemanagement.impl._
 
-
+/**
+ * This trait is the view to save a lecture in persistence
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 trait  LecturesCreateSave extends LecturesCreateHelper {
 
-  // this function represents the screen to save a lecture
+  /** this function represents the screen to save a lecture */
   def saveLecture() = {
 
     val dozentInfos = Dozents.is.map(dozent => DozentInformation((dozents filter(_.name == dozent._1)).head,

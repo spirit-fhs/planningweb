@@ -1,23 +1,19 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This object creates the PlanningLectures for a summer or winter semester
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import org.unsane.spirit.planningweb
 import planningweb.dozentmanagement.impl._
 import planningweb.coursemanagement.impl._
 import planningweb.lecturemanagement.impl._
 
+/**
+ * This object creates the PlanningLectures for a summer or winter semester
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 object PlanningLectureCreater {
 
-  // function creates a list of planninglectures for one lecture
+  /** function creates a list of planninglectures for one lecture */
   private def buildPlanningLecture(lecture: Lecture): List[PlanningLecture] = {
     val minHouresOfLecture = 1
     val maxHouresOfLecture = lecture.hoursOfLecture
@@ -120,7 +116,7 @@ object PlanningLectureCreater {
       }
   }
 
-  // this function builds with a list of lectures the right number of planninglectures
+  /** this function builds with a list of lectures the right number of planninglectures */
   def buildPlan(lectures: List[Lecture]): List[PlanningLecture] = {
     lectures.map(buildPlanningLecture(_)).flatten
   }

@@ -1,25 +1,22 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This trait is the view to add different semesters of a course to a lecture
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import scala.xml._
 import scala.collection.mutable.Set
 
-
+/**
+ * This trait is the view to add different semesters of a course to a lecture
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 trait LecturesCreateSemesters extends LecturesCreateHelper {
 
-  // this function represents the screen to select the semester of some courses which are
-  // necessary for the lecture
+  /**
+     * this function represents the screen to select the semester of some courses which are
+     * necessary for the lecture
+     */
   def addSemesters() = {
     val toAdd = Set[(CourseName,SemesterNumber)]()
     val filteredCourses = courses filter(course => Courses.is.contains(course.name))

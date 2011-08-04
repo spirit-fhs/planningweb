@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.transform.impl
 
-/**
- * This class is the implementation of ITransform interface for a Course object
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import org.unsane.spirit.planningweb._
 import transform.{ITransform, TransformFactory}
 import model.CourseMongo
@@ -17,7 +7,12 @@ import coursemanagement.impl.{Course, Semester}
 import net.liftweb.json.JsonDSL._
 import net.liftweb.json.JsonAST.JObject
 
-
+/**
+ * This class is the implementation of ITransform interface for a Course object
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class TransformCourseMongo extends ITransform {
 
   /**

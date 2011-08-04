@@ -1,20 +1,16 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This class is the representation of the view to create a Relationship for a tutorial
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
 import util.Helpers._
 
+/**
+ * This class is the representation of the view to create a Relationship for a tutorial
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class RelationshipsTutorial extends RelationshipHelper with RelationshipsLectureSelect
                                                        with RelationshipsGroupSelect
                                                        with RelationshipsDozentSelect

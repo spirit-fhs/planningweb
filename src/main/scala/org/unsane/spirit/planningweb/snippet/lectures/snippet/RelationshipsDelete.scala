@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This class is the view to delete a lecture group or a tutorial group
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -25,7 +15,12 @@ import planningweb.lecturemanagement.impl._
 import planningweb.persistence._
 import planningweb.transform._
 
-// this snippet is the menue to delete a lecture group or a tutorial group
+/**
+ * This class is the view to delete a lecture group or a tutorial group
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class RelationshipsDelete {
   val perLayer = Props.get("spirit.pers.layer") openOr ""
   val persistence:IPersistence = PersistenceFactory
@@ -38,6 +33,7 @@ class RelationshipsDelete {
 
   val thisSide = "/lecture/relationdelete"
 
+
   def delete() = {
     val toDeleteLecture = Set[LectureRelationship]()
     val toDeleteTutorial = Set[LectureRelationship]()
@@ -48,7 +44,6 @@ class RelationshipsDelete {
                    case List() => Empty
                    case _ => Full(toChangeList.head)
                  }
-    //val thisSide = "/lecture/relationdelete"
 
     // to set LectureName
     def setSession(set: String): JsCmd = {

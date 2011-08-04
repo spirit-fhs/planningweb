@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.worktimes.snippet
 
-/**
- * This class is the view to manage the worktime settings
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -21,6 +11,12 @@ import planningweb.worktimemanagement.impl.WorktimeManager
 import planningweb.persistence._
 import planningweb.transform._
 
+/**
+ * This class is the view to manage the worktime settings
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class WorktimeSettings {
   val persLayer = Props.get("spirit.pers.layer") openOr ""
 

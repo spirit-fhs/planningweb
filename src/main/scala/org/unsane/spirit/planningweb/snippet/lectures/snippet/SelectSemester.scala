@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This class is the view to select a lecture for summer or winter semester
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -23,7 +13,12 @@ import planningweb.persistence._
 import planningweb.transform._
 import planningweb.lecturemanagement.impl._
 
-
+/**
+ * This class is the representation of the view to create a Relationship for a tutorial
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class SelectSemester {
 
   val usedPersistence = Props.get("spirit.pers.layer") openOr ""
@@ -31,7 +26,7 @@ class SelectSemester {
                      .createPersistence(TransformFactory
                      .createTransformLecture(Props.get("spirit.pers.layer") openOr ""))
 
-  // this function builds the menue to select a lecture for summer or winter semester
+  /** this function builds the menue to select a lecture for summer or winter semester  */
   def select() = {
     var lectures = persistence.read.asInstanceOf[List[Lecture]]
     val toSS = Set[Lecture]()

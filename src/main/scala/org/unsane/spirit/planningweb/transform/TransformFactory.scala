@@ -1,21 +1,18 @@
 package org.unsane.spirit.planningweb.transform
 
+import impl._
+
 /**
  * This object is the representation of the TransformFactory to transform
  * objects form the object-side to the database-side
  *
- * $cs
  * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
+ * @author Christoph Schmidt
  */
-
-import impl._
 
 object TransformFactory {
 
-   /**
+ /**
    * Create a new TransformDozentType object for different databases. But
    * at the moment is onlay MongoDB supported. It transform the object-world
    * to the database-world

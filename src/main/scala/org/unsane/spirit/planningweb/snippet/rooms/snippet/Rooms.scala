@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.rooms.snippet
 
-/**
- * This class is the view to manage the rooms
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -22,6 +12,12 @@ import planningweb.persistence._
 import planningweb.transform._
 import scala.collection.mutable.Set
 
+/**
+ * This class is the view to manage the rooms
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class Rooms {
   val peristence:IPersistence = PersistenceFactory
                                     .createPersistence(TransformFactory
@@ -31,8 +27,7 @@ class Rooms {
   var roomSize = "0"
   var roomEquipment = Set[String]()
 
-  // to add a new Room to persistence
-
+  /** to add a new Room to persistence */
   def add() = {
     def addRoom () {
       val rooms = peristence.read.asInstanceOf[List[Room]]
@@ -79,7 +74,7 @@ class Rooms {
       </tr>
      </table> ++ addButton
   }
-  // to delete a room from persistence
+  /** to delete a room from persistence */
   def delete () = {
     val toDelete = Set[Room]()
     val rooms = peristence.read.asInstanceOf[List[Room]]

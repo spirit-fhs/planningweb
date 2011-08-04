@@ -1,20 +1,17 @@
 package org.unsane.spirit.planningweb.transform.impl
 
-/**
- * This class is the implementation of ITransform interface for a WorktimeManager object
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import org.unsane.spirit.planningweb._
 import transform.ITransform
 import model.WorktimeManagerMongo
 import worktimemanagement.impl.WorktimeManager
 import net.liftweb.json.JsonDSL._
+
+/**
+ * This class is the implementation of ITransform interface for a WorktimeManager object
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 
 class TransformWorktimeManagerMongo extends ITransform {
 

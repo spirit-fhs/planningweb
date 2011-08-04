@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.worktimes.snippet
 
-/**
- * This trait provides the Wishtime traits and classes with necessary informations
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -24,7 +14,12 @@ import planningweb.transform._
 import de.codecarving.fhsldap.fhsldap
 import de.codecarving.fhsldap.model.User
 
-
+/**
+ * This trait provides the Wishtime traits and classes with necessary informations
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 trait WishtimesHelper {
 
   val persLayer = Props.get("spirit.pers.layer") openOr ""

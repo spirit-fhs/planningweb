@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This provides all Lecture classes and traits with necessary informations
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import scala.xml._
@@ -25,6 +15,9 @@ import planningweb.dozentmanagement.impl.Dozent
 /**
  * this object is very important because all LectureCreate-Traits need the same
  * instance of the staus objects
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
  */
 object LecturesCreateHelper {
 
@@ -37,8 +30,11 @@ object LecturesCreateHelper {
   object AddedHoure
 }
 
-/*
+/**
  * this trait provides the LecturesCreate-Traits with all important values etc.
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
  */
 trait LecturesCreateHelper {
 
@@ -47,15 +43,17 @@ trait LecturesCreateHelper {
   val thisSide = "/lecture/create"
   val lectureManagement = "/lecture/management"
 
-  // this object stores the current Status of the LectureCreate menue
+  /**  this object stores the current Status of the LectureCreate menue */
   object Status extends SessionVar[Any](LecturesCreateHelper.InitialStatus)
 
-  // this object is necessary to set a create lecture process apart from a update lecture process
+  /** this object is necessary to set a create lecture process apart from a update lecture process */
   object IsUpdate extends SessionVar[Boolean](false)
 
-  // this object is necessary for the update process, because if somebody changes the name
-  // of a lecture during the update process, we will lose the important values
-  // to update the lecture
+  /**
+     * this object is necessary for the update process, because if somebody changes the name
+     * of a lecture during the update process, we will lose the important values
+     * to update the lecture
+     */
   object NameBeforeUpdate extends SessionVar[String]("")
 
   // all these type aliases are necessary to understand the definition of the session variables easier
@@ -95,7 +93,7 @@ trait LecturesCreateHelper {
 
   val dozents = persistenceD.read.asInstanceOf[List[Dozent]]
 
-  // if somebody uses the cancel button the cancel function will be called
+  /** if somebody uses the cancel button the cancel function will be called */
   def cancle() = {
     Name(initialName)
     Courses(initialCourses)
@@ -106,7 +104,7 @@ trait LecturesCreateHelper {
     S.redirectTo(lectureManagement)
   }
 
-  // this function checks from where the user comes
+  /** this function checks from where the user comes */
   def checkWhereWasTheUserBefore(status: Boolean) {
     if(IsUpdate.is == status) {
       Name(initialName)

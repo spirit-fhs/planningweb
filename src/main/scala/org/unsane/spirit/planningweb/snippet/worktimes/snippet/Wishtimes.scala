@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.worktimes.snippet
 
-/**
- * This class is the view to manage the wishtimes
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -20,7 +10,12 @@ import net.liftweb.util.Props
 import org.unsane.spirit.planningweb
 import planningweb.worktimemanagement.impl._
 
-
+/**
+ * This class is the view to manage the wishtimes
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class Wishtimes extends WishtimesHelper with WishtimesTimetable {
   val worktimeFactor = 1.25
 

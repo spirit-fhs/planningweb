@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This class is the representation of the view to commit the Lecture-Plan
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -24,6 +14,13 @@ import planningweb.lecturemanagement.impl._
 import planningweb.persistence._
 import planningweb.transform._
 
+/**
+ * This class is the representation of the view to commit the Lecture-Plan
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
+
 class CommitPlan {
 
   val perLayer = Props.get("spirit.pers.layer") openOr ""
@@ -34,6 +31,7 @@ class CommitPlan {
 
   object SemesterType extends SessionVar[String]("")
 
+  /** this function builds the menu to commit the plan */
   def commit() = {
 
     val lecturesSS = lectures.filter(_.inSummerSemester == true)

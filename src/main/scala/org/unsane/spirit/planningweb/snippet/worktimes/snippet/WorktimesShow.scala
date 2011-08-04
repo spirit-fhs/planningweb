@@ -1,16 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.worktimes.snippet
 
-/**
- * This class is the view to show the selected rooms and worktimes
- * of the different dozents
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -27,7 +16,13 @@ import planningweb.dozentmanagement.impl._
 import planningweb.persistence._
 import planningweb.transform._
 
-
+/**
+ * This class is the view to show the selected rooms and worktimes
+ * of the different dozents
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class WorktimesShow {
   val persLayer = Props.get("spirit.pers.layer") openOr ""
 

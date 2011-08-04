@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.dozents.snippet
 
-/**
- * This trait provides the Dozents view with all necessary informations
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb.util.Props
 import org.unsane.spirit.planningweb
 import planningweb.dozentmanagement.impl.{Dozent, DozentType, FHSDozent}
@@ -17,6 +7,13 @@ import planningweb.lecturemanagement.impl._
 import planningweb.worktimemanagement.impl.Worktime
 import planningweb.persistence._
 import planningweb.transform._
+
+/**
+ * This trait provides the Dozents view with all necessary informations
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 
 trait DozentsHelper {
   val perLayer = Props.get("spirit.pers.layer") openOr ""

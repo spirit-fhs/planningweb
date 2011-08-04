@@ -20,9 +20,14 @@ import planningweb.lecturemanagement.impl._
 import planningweb.coursemanagement.impl._
 
 
-// this trait represents the screen to save a Group
+/**
+ * This trait is the view to save a group
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 trait RelationshipsSave extends RelationshipHelper {
-  // this is the save function of a Group
+  /**  this is the save function of a Group */
   def saveGroup() = {
 
     val courseSemesters = Groups.is.toList.map(cs => CourseSemester(cs._1,cs._2))

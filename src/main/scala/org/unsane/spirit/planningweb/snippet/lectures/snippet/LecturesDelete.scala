@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This class is the view to delete a lecture
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -21,7 +11,12 @@ import planningweb.lecturemanagement.impl._
 import planningweb.persistence._
 import planningweb.transform._
 
-
+/**
+ * This class is the view to delete a lecture
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class LecturesDelete {
 
   val usedPersistence = Props.get("spirit.pers.layer") openOr ""
@@ -30,7 +25,7 @@ class LecturesDelete {
                                   .createTransformLecture(usedPersistence))
 
 
-  // to delete a lecture from persistence
+  /** to delete a lecture from persistence */
   def delete () = {
     import scala.collection.mutable.Set
     val toDelete = Set[Lecture]()

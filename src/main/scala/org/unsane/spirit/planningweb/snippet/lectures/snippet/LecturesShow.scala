@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This class is view to show a lecture
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -24,7 +14,12 @@ import planningweb.lecturemanagement.impl._
 import planningweb.persistence._
 import planningweb.transform._
 
-
+/**
+ * This class is view to show a lecture
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class LecturesShow {
 
   val perLayer = Props.get("spirit.pers.layer") openOr ""
@@ -35,7 +30,7 @@ class LecturesShow {
 
   object LectureName extends SessionVar[String]("")
 
-  // this function creates the menue to show a lecture
+  /** this function creates the menue to show a lecture */
   def show() = {
 
     val toShowList = lectures filter(_.name == LectureName.is)

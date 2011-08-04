@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This trait is the view to select a lecture to create a group
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -25,9 +15,12 @@ import planningweb.transform._
 import planningweb.persistence._
 import planningweb.lecturemanagement.impl._
 
-
-// this trait represents the screen to select a lecture to
-// create a group
+/**
+ * This trait is the view to select a lecture to create a group
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 trait RelationshipsLectureSelect extends RelationshipHelper {
 
   def setSession(set: String): JsCmd = {

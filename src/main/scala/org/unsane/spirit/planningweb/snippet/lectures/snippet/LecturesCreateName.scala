@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This trait is the view to add a name and type of a lecture
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -20,10 +10,15 @@ import planningweb.transform._
 import planningweb.persistence._
 import planningweb.lecturemanagement.impl._
 
-
+/**
+ * This trait is the view to add a name and type of a lecture
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 trait LecturesCreateName extends LecturesCreateHelper {
 
-  // this function represents the screen to select the name and the type of a lecture
+  /** this function represents the screen to select the name and the type of a lecture */
   def addName() = {
 
     val persistenceT:IPersistence = PersistenceFactory

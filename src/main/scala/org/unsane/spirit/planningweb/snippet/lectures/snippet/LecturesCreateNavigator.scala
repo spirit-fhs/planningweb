@@ -4,13 +4,9 @@ package org.unsane.spirit.planningweb.snippet.lectures.snippet
  * This trait realizes the navigation between the different screens to create or update
  * a Lecture
  *
- * $cs
  * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
+ * @author Christoph Schmidt
  */
-
 
 trait LecturesCreateNavigator extends LecturesCreateHelper with LecturesCreateName
                                                   with LecturesCreateCourses

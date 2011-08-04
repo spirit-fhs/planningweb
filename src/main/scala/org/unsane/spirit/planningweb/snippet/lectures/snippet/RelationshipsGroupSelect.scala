@@ -1,25 +1,20 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This trait is the view to select members for a group
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
 import scala.xml._
 import scala.collection.mutable.Set
 
-// this trait represents the screen to select members for a group
+/**
+ * This trait is the view to select members for a group
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 trait RelationshipsGroupSelect extends RelationshipHelper {
 
-  // this function creates the menue to seclect the member of a group
+  /** this function creates the menue to seclect the member of a group */
   def addGroups() = {
     val minMembers = 1
     val toAdd = Set[(GroupName,SemesterNumber)]()

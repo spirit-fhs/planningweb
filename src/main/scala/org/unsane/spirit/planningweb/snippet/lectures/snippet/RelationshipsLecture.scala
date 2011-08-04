@@ -1,21 +1,16 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This class creates the different views to build a group
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
 import util.Helpers._
 
-
+/**
+ * This class creates the different views to build a group
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class RelationshipsLecture extends RelationshipHelper with RelationshipsLectureSelect
                                                       with RelationshipsGroupSelect
                                                       with RelationshipsDozentSelect

@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This provides all Relationship traits and classes with necessary informations
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -22,8 +12,13 @@ import planningweb.persistence._
 import planningweb.lecturemanagement.impl._
 import planningweb.dozentmanagement.impl.Dozent
 
-// this object is very important because all Relationship-Traits need the same
-// instance of the staus objects
+/**
+ * this object is very important because all Relationship-Traits need the same
+ * instance of the staus objects
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 object RelationshipHelper {
   object InitialStatus
   object SelectedLecture
@@ -31,7 +26,12 @@ object RelationshipHelper {
   object SelectedDozents
 }
 
-// this trait provides the Relationship-Traits with all important values etc
+/**
+ * this trait provides the Relationship-Traits with all important values etc.
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 trait RelationshipHelper {
 
   val usedPersistence = Props.get("spirit.pers.layer") openOr ""
@@ -45,7 +45,7 @@ trait RelationshipHelper {
 
   val lectures = persistence.read.asInstanceOf[List[Lecture]]
 
-  // to set a lecture relationship apart from a tutorial relationship
+  /**  to set a lecture relationship apart from a tutorial relationship */
   //object IsLecture extends SessionVar[Boolean](false)
   object IsTutorial extends SessionVar[Boolean](false)
 
@@ -53,10 +53,10 @@ trait RelationshipHelper {
   type GroupName = String
   type SemesterNumber = Int
 
-  // we store in this object the lecture for which we want to create a relationship
+  /** we store in this object the lecture for which we want to create a relationship */
   object ToAddRelation extends SessionVar[Box[Lecture]](Empty)
 
-  // this object stores the current Status of the relationship menue
+  /** this object stores the current Status of the relationship menue */
   object Status extends SessionVar[Any](RelationshipHelper.InitialStatus)
 
   // all these values are the initial values for the session variables
@@ -67,7 +67,7 @@ trait RelationshipHelper {
   object Groups extends SessionVar[Set[(GroupName,SemesterNumber)]](initialGroups)
   object Dozents extends SessionVar[Set[Dozent]](initialDozents)
 
-  // if somebody uses the cancel button the cancel function will be called
+  /** if somebody uses the cancel button the cancel function will be called */
   def cancle() = {
     ToAddRelation(Empty)
     Groups(initialGroups)
@@ -77,7 +77,7 @@ trait RelationshipHelper {
     S.redirectTo(lectureManagement)
   }
 
-  // this function checks from where the user comes
+  /** this function checks from where the user comes  */
   def checkWhereWasTheUserBefore(status: Boolean) {
     if(IsTutorial.is == status) {
       ToAddRelation(Empty)

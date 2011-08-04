@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.dozents.snippet
 
-/**
- * This class is the representation of the view to manage the Dozents
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -26,10 +16,16 @@ import planningweb.worktimemanagement.impl.Worktime
 import planningweb.persistence._
 import planningweb.transform._
 
-// this snippet is the menue to create, update and delete a dozent
+/**
+ * This class is the representation of the view to manage the Dozents
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
+
 class Dozents extends DozentsHelper {
 
-  // to sotre a dozent
+  /** to sotre a dozent */
   def add () = {
 
     var name = ""
@@ -103,7 +99,7 @@ class Dozents extends DozentsHelper {
     addMenue
   }
 
-  // to delete a dozent
+  /** to delete a dozent */
   def delete() = {
 
     import scala.collection.mutable.Set
@@ -146,7 +142,7 @@ class Dozents extends DozentsHelper {
     checkboxes ++ delete
   }
 
-  // to update a Dozent
+  /** to update a Dozent */
   def update () = {
 
     var reasonSelfManagement = ""

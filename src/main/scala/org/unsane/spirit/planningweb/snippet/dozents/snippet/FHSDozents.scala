@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.dozents.snippet
 
-/**
- * This class is the representation of the view to manage the FHSDozents
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -20,6 +10,13 @@ import org.unsane.spirit.planningweb
 import planningweb.dozentmanagement.impl._
 import planningweb.persistence._
 import planningweb.transform._
+
+/**
+ * This class is the representation of the view to manage the FHSDozents
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 
 class FHSDozents {
 
@@ -36,7 +33,7 @@ class FHSDozents {
   val fhsdozents = persistenceFHSDozent.read.asInstanceOf[List[FHSDozent]]
   val dozents = persistenceDozent.read.asInstanceOf[List[Dozent]]
 
-  // to store a fhsdozent object
+  /** to store a fhsdozent object */
   def add() = {
 
     var fhsId = ""
@@ -80,6 +77,7 @@ class FHSDozents {
     addMenue
   }
 
+  /** to delete a fhsdozent object */
   def delete() = {
     import scala.collection.mutable.Set
     val toDelete = Set[FHSDozent]()

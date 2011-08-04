@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This class is the view to update a lecture
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -27,7 +17,12 @@ import planningweb.lecturemanagement.impl._
 import planningweb.coursemanagement.impl.Course
 import planningweb.dozentmanagement.impl.Dozent
 
-
+/**
+ * This class is the view to update a lecture
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class LecturesUpdate extends LecturesCreateNavigator {
 
   val peristence:IPersistence = PersistenceFactory
@@ -42,7 +37,7 @@ class LecturesUpdate extends LecturesCreateNavigator {
   // a update process and a normal create process
   checkWhereWasTheUserBefore(false)
 
-  // this function represents the different screens
+  /** this function represents the different screens */
   def update() = {
     val lectures = peristence.read.asInstanceOf[List[Lecture]]
 

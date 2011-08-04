@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.worktimes.snippet
 
-/**
- * This class is the view for the timetablesheduler to manage the wishtimes  of
- *  fhsdozents
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -23,6 +13,13 @@ import net.liftweb.util.Props
 import org.unsane.spirit.planningweb
 import planningweb.worktimemanagement.impl._
 
+/**
+ * This class is the view for the timetablesheduler to manage the wishtimes  of
+ *  fhsdozents
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class WishtimesAdmin extends Wishtimes {
 
   object FHSDozentName extends SessionVar[String]("")

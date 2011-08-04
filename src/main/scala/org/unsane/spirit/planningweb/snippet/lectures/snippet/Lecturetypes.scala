@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This class is the view to add and delete a LectureType
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -22,7 +12,12 @@ import planningweb.lecturemanagement.impl.LectureType
 import planningweb.persistence._
 import planningweb.transform._
 
-
+/**
+ * This class is the view to add and delete a LectureType
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 class Lecturetypes {
   val peristence:IPersistence = PersistenceFactory
                                   .createPersistence(TransformFactory
@@ -30,7 +25,7 @@ class Lecturetypes {
 
   var name = ""
 
-  // to add a new LectureType to persistence
+  /** to add a new LectureType to persistence */
   def add () {
     val lectureTypes = peristence.read.asInstanceOf[List[LectureType]]
     val alreadyAvailable = lectureTypes filter {typeL => typeL.name == name}
@@ -43,7 +38,7 @@ class Lecturetypes {
     }
   }
 
-  // to delete a LectureType from persistence
+  /** to delete a LectureType from persistence */
   def delete () = {
     import scala.collection.mutable.Set
     val toDelete = Set[LectureType]()

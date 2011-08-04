@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.courses.snippet
 
-/**
- * This class is the representation of the view to manage the diffenrent courses
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -25,6 +15,12 @@ import planningweb.lecturemanagement.impl._
 import planningweb.persistence._
 import planningweb.transform._
 
+/**
+ * This class is the representation of the view to manage the diffenrent courses
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 
 class Courses {
   val perLayer = Props.get("spirit.pers.layer") openOr ""
@@ -47,7 +43,7 @@ class Courses {
 
   val alreadyInUse = usedCourses.filter(courses.contains(_))
 
-  // to add a course
+  /** to add a course */
   def add() = {
 
     var name = ""
@@ -111,7 +107,7 @@ class Courses {
     addMenue
   }
 
-  // to delet a course
+  /** to delet a course */
   def delete () = {
     import scala.collection.mutable.Set
     val toDelete = Set[Course]()
@@ -151,7 +147,7 @@ class Courses {
     checkboxes ++ delete
   }
 
-  // to update a course
+  /** to update a course */
   def update() = {
 
     var shortcut = ""

@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.dozents.snippet
 
-/**
- * This class is the representation of the view to manage the DozentTypes
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -21,6 +11,13 @@ import planningweb.dozentmanagement.impl.DozentType
 import planningweb.persistence._
 import planningweb.transform._
 
+/**
+ * This class is the representation of the view to manage the DozentTypes
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
+
 class Dozenttypes {
 
   val persistence:IPersistence = PersistenceFactory
@@ -30,7 +27,7 @@ class Dozenttypes {
   var name = ""
   var requiredTime = "0"
 
-  // to add a new DozentType to persistence
+  /** to add a new DozentType to persistence */
   def add () {
     val dozentTypes = persistence.read.asInstanceOf[List[DozentType]]
 
@@ -47,7 +44,7 @@ class Dozenttypes {
       S.notice("Type already exist or Input is empty!")
     }
   }
-  // to delete a DozentType from persistence
+  /** to delete a DozentType from persistence */
   def delete () = {
     import scala.collection.mutable.Set
     val toDelete = Set[DozentType]()

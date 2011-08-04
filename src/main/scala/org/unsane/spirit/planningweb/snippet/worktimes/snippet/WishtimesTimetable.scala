@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.worktimes.snippet
 
-/**
- * This trait is the view of the WishtimeTimetable to select Wishtimes
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -18,6 +8,12 @@ import scala.xml._
 import org.unsane.spirit.planningweb
 import planningweb.worktimemanagement.impl._
 
+/**
+ * This trait is the view of the WishtimeTimetable to select Wishtimes
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 trait WishtimesTimetable extends WishtimesHelper {
 
   val wishTimeColor = "wish"

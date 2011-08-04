@@ -1,15 +1,5 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This trait is the view to add dozents to a group
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
-
 import net.liftweb._
 import http._
 import common._
@@ -17,9 +7,15 @@ import scala.xml._
 import scala.collection.mutable.Set
 import org.unsane.spirit.planningweb.dozentmanagement.impl.Dozent
 
-
+/**
+ * This trait is the view to add dozents to a group
+ *
+ * $cs
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 trait RelationshipsDozentSelect extends RelationshipHelper {
-  // this function creates the menue to select dozents for a group
+  /** this function creates the menue to select dozents for a group */
   def addDozents() = {
     var dozents = List[Dozent]()
     val toAdd = Set[Dozent]()

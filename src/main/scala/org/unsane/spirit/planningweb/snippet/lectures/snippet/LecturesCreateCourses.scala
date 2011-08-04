@@ -1,22 +1,19 @@
 package org.unsane.spirit.planningweb.snippet.lectures.snippet
 
-/**
- * This trait is the representation of the view to add some courses to a lecture
- *
- * $cs
- * @version 1.0
- *
- * @define cs @author Christoph Schmidt [[mailto:c.schmidt.a@stud.fh-sm.de "
- * <c.schmidt.a@stud.fh-sm.de>]]
- */
 import net.liftweb._
 import http._
 import scala.xml._
 import scala.collection.mutable.Set
 
+/**
+ * This trait is the representation of the view to add some courses to a lecture
+ *
+ * @version 1.0
+ * @author Christoph Schmidt
+ */
 trait LecturesCreateCourses extends LecturesCreateHelper {
 
-  // this function is used to add some courses to a lecture
+  /** this function is used to add some courses to a lecture */
   def addCourses() = {
 
     val courseNames = courses map(_.name)
