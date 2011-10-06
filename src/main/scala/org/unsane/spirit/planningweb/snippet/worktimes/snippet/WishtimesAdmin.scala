@@ -64,6 +64,6 @@ class WishtimesAdmin extends Wishtimes {
   }
 
   override def render = {
-    "#edit *" #> edit
+    "#edit *" #> (edit ++ SHtml.hidden(save)) 
   }
 }

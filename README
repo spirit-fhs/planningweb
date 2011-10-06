@@ -20,7 +20,7 @@ Hints:
   is the module found at https://github.com/mdenison/FhS-LDAP-Module.
   Of course it is possible to use the module as described in its README.
 
-* Working SBT 0.7.4 installation is needed http://code.google.com/p/simple-build-tool/.
+* Working SBT 0.7.7 installation is needed http://code.google.com/p/simple-build-tool/.
 
 * Not fully functional yet....
 

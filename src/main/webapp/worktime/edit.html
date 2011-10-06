@@ -8,9 +8,12 @@
     <div id="main" class="lift:surround?with=default;at=content">
       <link href="/classpath/css/tablestyle.css" type="text/css" rel="stylesheet" media="screen, projection" />
       <h2>Arbeitszeiten bearbeiten</h2>
-      <div class="lift:WishtimesAdmin?form=post">
-       <div id="edit"></div>
-      </div>
+      <form class="lift:form.ajax"> 
+        <div class="lift:WishtimesAdmin">
+          <div id="edit"></div>
+          <input type="hidden">
+        </div>
+      </form>
     </div>
   </body>
 </html>
