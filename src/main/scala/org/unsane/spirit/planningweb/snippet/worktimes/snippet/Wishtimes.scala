@@ -22,7 +22,7 @@ import JE._
  * @author Christoph Schmidt
  */
 class Wishtimes extends WishtimesHelper with WishtimesTimetable with BlockUI {
-  OnLoad(new JsCmd{def toJsCmd = "changeColor"})
+
   val worktimeFactor = 1.25
   lazy val dozent = isFHSDozent.head.dozent 
  
@@ -44,7 +44,7 @@ class Wishtimes extends WishtimesHelper with WishtimesTimetable with BlockUI {
     def calculateMinSelectedTimes() = {
       lazy val minWorkTime = calculateWorktime
       val selectedWorktime = timeSlotsToSave.filter(s => s.isWishtime == true || s.isAvailableTime == true).size
-      S.notice("Ausgewählt: " + selectedWorktime.toString)
+      S.warning("Ausgewählt: " + selectedWorktime.toString)
       if(selectedWorktime < minWorkTime) {
         false
       } else {

@@ -18,7 +18,7 @@ spirit.server.admins=braun3;schmid11;recknage
 spirit.default.email=spirit@informatik.fh-schmalkalden.de
 
 # Wether we want to use LDAP Auth or not
-ldap.server.auth.use=true
+ldap.server.auth.use=false
 
 # Using SSL to log in
 loginSSLMenuLoc=https://spirit.fh-schmalkalden.de/planningweb/user_mgt/login
