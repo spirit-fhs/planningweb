@@ -43,7 +43,14 @@ class Wishtimes extends WishtimesHelper with WishtimesTimetable with BlockUI {
                                sixMo,sixTu,sixWe,sixTh,sixFr)
     def calculateMinSelectedTimes() = {
       lazy val minWorkTime = calculateWorktime
-      val selectedWorktime = timeSlotsToSave.filter(s => s.isWishtime == true || s.isAvailableTime == true).size
+      val selectedTimes = timeSlotsToSave.filter(s => s.isWishtime == true || s.isAvailableTime == true).size
+      val selectedWorktime =
+        timeSlotsToSave.
+          contains(TimeSlot("We",3,false,false)) match {
+          case true => selectedTimes
+          case false => S.warning("Der 3. Slot am Mittwoch ist optional und wird nicht angerechnet!"); selectedTimes - 1
+        }
+
       S.warning("Ausgewählt: " + selectedWorktime.toString)
       if(selectedWorktime < minWorkTime) {
         false

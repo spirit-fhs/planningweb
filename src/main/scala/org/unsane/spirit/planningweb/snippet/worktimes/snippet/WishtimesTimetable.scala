@@ -255,7 +255,7 @@ trait WishtimesTimetable extends WishtimesHelper {
              <th>{"11:45-13:15"}</th>
              <th>{makeRadio("Mo",3)}</th>
              <th>{makeRadio("Tu",3)}</th>
-             <th>{/*makeRadio("We",3)*/}</th>
+             <th>{makeRadio("We",3)}</th>
              <th>{makeRadio("Th",3)}</th>
              <th>{makeRadio("Fr",3)}</th>
             </tr>
