@@ -72,38 +72,47 @@ trait WishtimesHelper {
   }
 
   // the different timeslots
-  var oneMo = TimeSlot("Mo",1,false,false)
-  var twoMo = TimeSlot("Mo",2,false,false)
-  var threeMo = TimeSlot("Mo",3,false,false)
-  var fourMo = TimeSlot("Mo",4,false,false)
-  var fiveMo = TimeSlot("Mo",5,false,false)
-  var sixMo = TimeSlot("Mo",6,false,false)
+  object oneMo extends SessionVar[TimeSlot](TimeSlot("Mo",1,false,false))
+  object twoMo extends SessionVar[TimeSlot](TimeSlot("Mo",2,false,false))
+  object threeMo extends SessionVar[TimeSlot](TimeSlot("Mo",3,false,false))
+  object fourMo extends SessionVar[TimeSlot](TimeSlot("Mo",4,false,false))
+  object fiveMo extends SessionVar[TimeSlot](TimeSlot("Mo",5,false,false))
+  object sixMo extends SessionVar[TimeSlot](TimeSlot("Mo",6,false,false))
 
-  var oneTu = TimeSlot("Tu",1,false,false)
-  var twoTu = TimeSlot("Tu",2,false,false)
-  var threeTu = TimeSlot("Tu",3,false,false)
-  var fourTu = TimeSlot("Tu",4,false,false)
-  var fiveTu = TimeSlot("Tu",5,false,false)
-  var sixTu  = TimeSlot("Tu",6,false,false)
+  object oneTu extends SessionVar[TimeSlot](TimeSlot("Tu",1,false,false))
+  object twoTu extends SessionVar[TimeSlot](TimeSlot("Tu",2,false,false))
+  object threeTu extends SessionVar[TimeSlot](TimeSlot("Tu",3,false,false))
+  object fourTu extends SessionVar[TimeSlot](TimeSlot("Tu",4,false,false))
+  object fiveTu extends SessionVar[TimeSlot](TimeSlot("Tu",5,false,false))
+  object sixTu  extends SessionVar[TimeSlot](TimeSlot("Tu",6,false,false))
 
-  var oneWe = TimeSlot("We",1,false,false)
-  var twoWe = TimeSlot("We",2,false,false)
-  var threeWe = TimeSlot("We",3,false,false)
-  var fourWe = TimeSlot("We",4,false,false)
-  var fiveWe = TimeSlot("We",5,false,false)
-  var sixWe  = TimeSlot("We",6,false,false)
+  object oneWe extends SessionVar[TimeSlot](TimeSlot("We",1,false,false))
+  object twoWe extends SessionVar[TimeSlot](TimeSlot("We",2,false,false))
+  object threeWe extends SessionVar[TimeSlot](TimeSlot("We",3,false,false))
+  object fourWe extends SessionVar[TimeSlot](TimeSlot("We",4,false,false))
+  object fiveWe extends SessionVar[TimeSlot](TimeSlot("We",5,false,false))
+  object sixWe  extends SessionVar[TimeSlot](TimeSlot("We",6,false,false))
 
-  var oneTh = TimeSlot("Th",1,false,false)
-  var twoTh = TimeSlot("Th",2,false,false)
-  var threeTh = TimeSlot("Th",3,false,false)
-  var fourTh = TimeSlot("Th",4,false,false)
-  var fiveTh = TimeSlot("Th",5,false,false)
-  var sixTh = TimeSlot("Th",6,false,false)
+  object oneTh extends SessionVar[TimeSlot](TimeSlot("Th",1,false,false))
+  object twoTh extends SessionVar[TimeSlot](TimeSlot("Th",2,false,false))
+  object threeTh extends SessionVar[TimeSlot](TimeSlot("Th",3,false,false))
+  object fourTh extends SessionVar[TimeSlot](TimeSlot("Th",4,false,false))
+  object fiveTh extends SessionVar[TimeSlot](TimeSlot("Th",5,false,false))
+  object sixTh extends SessionVar[TimeSlot](TimeSlot("Th",6,false,false))
 
-  var oneFr = TimeSlot("Fr",1,false,false)
-  var twoFr = TimeSlot("Fr",2,false,false)
-  var threeFr = TimeSlot("Fr",3,false,false)
-  var fourFr = TimeSlot("Fr",4,false,false)
-  var fiveFr = TimeSlot("Fr",5,false,false)
-  var sixFr = TimeSlot("Fr",6,false,false)
+  object oneFr extends SessionVar[TimeSlot](TimeSlot("Fr",1,false,false))
+  object twoFr extends SessionVar[TimeSlot](TimeSlot("Fr",2,false,false))
+  object threeFr extends SessionVar[TimeSlot](TimeSlot("Fr",3,false,false))
+  object fourFr extends SessionVar[TimeSlot](TimeSlot("Fr",4,false,false))
+  object fiveFr extends SessionVar[TimeSlot](TimeSlot("Fr",5,false,false))
+  object sixFr extends SessionVar[TimeSlot](TimeSlot("Fr",6,false,false))
+
+  // a lift of alle Slots
+  val slots = List(oneMo,oneTu,oneWe,oneTh,oneFr,
+                   twoMo,twoTu,twoWe,twoTh,twoFr,
+                   threeMo,threeTu,threeWe,threeTh,threeFr,
+                   fourMo,fourTu,fourWe,fourTh,fourFr,
+                   fiveMo,fiveTu,fiveWe,fiveTh,fiveFr,
+                   sixMo,sixTu,sixWe,sixTh,sixFr)
+
 }

@@ -64,6 +64,8 @@ class WishtimesAdmin extends Wishtimes {
   }
 
   override def render = {
-    "#edit *" #> (edit ++ SHtml.hidden(save)) 
+    "#counter *" #> countView _ &
+    "#edit *" #> (edit ++ SHtml.hidden(save)) &
+    "#count [onclick]" #> SHtml.ajaxInvoke(() => { count.set(selectedWorktime); Noop})
   }
 }
