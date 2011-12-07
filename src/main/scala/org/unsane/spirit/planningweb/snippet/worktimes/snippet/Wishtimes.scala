@@ -26,6 +26,7 @@ import util._
 class Wishtimes extends WishtimesHelper with WishtimesTimetable with BlockUI {
   val worktimeFactor = 1.25
   lazy val dozent = isFHSDozent.head.dozent
+  var alreadyInUse = false
 
   // this function calculates the min. number of worktimes which a dozent shoud select
   private def calculateWorktime = {
@@ -76,7 +77,6 @@ class Wishtimes extends WishtimesHelper with WishtimesTimetable with BlockUI {
     }
     
     if(calculateMinSelectedTimes) {
-      var alreadyInUse = false
       val before = worktimeOfDozent match {
         case List() => Worktime(dozent,initialTimeSlots,"")
         case _ => alreadyInUse = true
@@ -91,6 +91,7 @@ class Wishtimes extends WishtimesHelper with WishtimesTimetable with BlockUI {
         persistenceWorktime update(before,after)
       } else {
           persistenceWorktime create after
+          alreadyInUse = true
         }
       saveNotificationOK
     } else {S.warning("Achtung: Bitte min. " + calculateWorktime + " Zeiten auswählen!"); saveNotificationError}
